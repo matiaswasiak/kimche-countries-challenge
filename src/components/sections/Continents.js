@@ -16,9 +16,13 @@ const Continents = ({ continents }) => {
     );
 
     if (searchCountry !== "") {
-      countriesByContinent = countriesByContinent.filter(({ name }) =>
+      countriesByContinent = countriesByContinent?.filter(({ name }) =>
         name.toLowerCase().includes(searchCountry.toLowerCase())
       );
+
+      if (countriesByContinent?.length === 0) {
+        return "";
+      }
     }
 
     return (
@@ -32,8 +36,8 @@ const Continents = ({ continents }) => {
   return (
     <div>
       <ul>
-        {continents?.map(({ name, index }) => (
-          <li key={index}>{byContinent(name)}</li>
+        {continents?.map(({ name, code }) => (
+          <li key={code}>{byContinent(name)}</li>
         ))}
       </ul>
     </div>

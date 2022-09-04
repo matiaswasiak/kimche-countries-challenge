@@ -3,9 +3,11 @@ import React from "react";
 const Countries = ({ countries }) => {
   return (
     <div>
-      {countries.map((countries) => (
-        <li key={countries.index}>{countries.name}</li>
-      ))}
+      <ul>
+        {countries?.map((countries) => (
+          <li key={countries.code}>{countries.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };
