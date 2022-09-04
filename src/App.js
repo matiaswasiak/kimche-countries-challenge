@@ -1,10 +1,11 @@
 import Home from "./components/pages/Home";
+import { SearchCountriesProvider } from "./context/searchCountriesContext";
 
 function App() {
   return (
-    <div>
+    <SearchCountriesProvider>
       <Home />
-    </div>
+    </SearchCountriesProvider>
   );
 }
 
