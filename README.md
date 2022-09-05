@@ -1,7 +1,7 @@
 # Desafío para Software Engineers
 
-Nombre postulante: MATIAS WASIAK
-Link a la app en producción: https://kimche-countries-challenge-matiaswasiak.vercel.app/
+- Nombre postulante: Matias Agustin Wasiak.
+- Link a la app en producción: kimche-countries-challenge.vercel.app
 
 ## Instrucciones
 
