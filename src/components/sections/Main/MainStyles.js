@@ -7,5 +7,17 @@ export const Container = styled.section`
     font-size: 2.8rem;
     line-height: 3.44rem;
     text-transform: uppercase;
+
+    @media (max-width: 730px) {
+      h2:first-child {
+        margin-top: 100px;
+      }
+    }
   }
+`;
+
+export const HandlerText = styled.p`
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
 `;

@@ -12,9 +12,12 @@ const Countries = ({ countries }) => {
             </div>
           </Title>
           <Info>
-            <p>{countries.phone}</p>
-            <p>{countries.currency}</p>
-            <p>{countries.capital}</p>
+            <p>{countries.code}</p>
+            <div>
+              <p>{countries.phone}</p>
+              <p>{countries.currency}</p>
+              <p>{countries.capital}</p>
+            </div>
           </Info>
           <Code>
             <p>{countries.code}</p>

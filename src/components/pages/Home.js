@@ -42,7 +42,12 @@ const Home = () => {
 
 export const Container = styled.div`
   max-width: 1440px;
+  width: 95%;
   margin: 0 auto;
+
+  @media (max-width: 730px) {
+    text-align: center;
+  }
 `;
 
 export default Home;

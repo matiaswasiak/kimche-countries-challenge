@@ -18,8 +18,22 @@ export const Form = styled.form`
     height: 50px;
     padding: 0 30px;
     margin-bottom: 40px;
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 500;
     background: #f8f8f8;
     border: none;
     outline: none;
+    transition: all 0.3s;
+
+    &::placeholder {
+      font-size: 14px;
+      font-family: "Montserrat";
+      font-weight: 300;
+    }
+
+    &:focus-visible {
+      transform: scale(1.05);
+    }
   }
 `;

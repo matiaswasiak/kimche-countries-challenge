@@ -3,13 +3,16 @@ import React, { useContext } from "react";
 import { searchCountriesContext } from "../../../context/searchCountriesContext";
 import { GET_COUNTRIES } from "../../../graphql/queries";
 import Countries from "../../organisims/Countries/Countries";
-import { Container } from "./MainStyles";
+import { Container, HandlerText } from "./MainStyles";
 
 const Languages = ({ languages }) => {
   // GET LANGUAGES
-  const { data: dataCountries } = useQuery(GET_COUNTRIES);
+  const { loading, error, data: dataCountries } = useQuery(GET_COUNTRIES);
 
   const { searchCountry } = useContext(searchCountriesContext);
+
+  if (loading) return <HandlerText>Loading...</HandlerText>;
+  if (error) return <HandlerText>Error :(</HandlerText>;
 
   const byLanguage = (nameLang) => {
     let countriesByLanguage = dataCountries?.countries?.filter(
