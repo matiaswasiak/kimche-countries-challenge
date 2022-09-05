@@ -15,20 +15,22 @@ const Continents = ({ continents }) => {
   if (error) return <HandlerText>Error :(</HandlerText>;
 
   const byContinent = (name) => {
+    // First we filter the countries whose continent name matches the name passed by parameter
     let countriesByContinent = dataCountries?.countries?.filter(
       ({ continent }) => continent.name === name
     );
 
+    // In case we have search information in our context, we again filter the countries received above with those of the search
     if (searchCountry !== "") {
       countriesByContinent = countriesByContinent?.filter(({ name }) =>
         name.toLowerCase().includes(searchCountry.toLowerCase())
       );
-
-      if (countriesByContinent?.length === 0) {
-        return "";
-      }
     }
 
+    // If doing that, we get no results, we return an empty string
+    if (countriesByContinent?.length === 0) return "";
+
+    // Once the previous filters have been passed, we can return the information needed to show the countries
     return (
       <>
         <h2>{name}</h2>

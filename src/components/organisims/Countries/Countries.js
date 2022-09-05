@@ -4,23 +4,23 @@ import { Card, Code, Container, Info, Title } from "./CountriesStyles";
 const Countries = ({ countries }) => {
   return (
     <Container>
-      {countries?.map((countries) => (
-        <Card key={countries.code}>
+      {countries?.map(({ code, name, phone, currency, capital }) => (
+        <Card key={code}>
           <Title>
             <div>
-              <p>{countries.name}</p>
+              <p>{name}</p>
             </div>
           </Title>
           <Info>
-            <p>{countries.code}</p>
+            <p>{code}</p>
             <div>
-              <p>{countries.phone}</p>
-              <p>{countries.currency}</p>
-              <p>{countries.capital}</p>
+              <p>{phone}</p>
+              <p>{currency}</p>
+              <p>{capital}</p>
             </div>
           </Info>
           <Code>
-            <p>{countries.code}</p>
+            <p>{code}</p>
           </Code>
         </Card>
       ))}

@@ -15,20 +15,22 @@ const Languages = ({ languages }) => {
   if (error) return <HandlerText>Error :(</HandlerText>;
 
   const byLanguage = (nameLang) => {
+    // First we filter the countries whose language name matches the name passed by parameter
     let countriesByLanguage = dataCountries?.countries?.filter(
       ({ languages }) => languages.find(({ name }) => name === nameLang)
     );
 
+    // In case we have search information in our context, we again filter the countries received above with those of the search
     if (searchCountry !== "") {
       countriesByLanguage = countriesByLanguage?.filter(({ name }) =>
         name.toLowerCase().includes(searchCountry.toLowerCase())
       );
-
-      if (countriesByLanguage?.length === 0) {
-        return "";
-      }
     }
 
+    // If doing that, we get no results, we return an empty string
+    if (countriesByLanguage?.length === 0) return "";
+
+    // Once the previous filters have been passed, we can return the information needed to show the countries
     return (
       <>
         <h2>{nameLang}</h2>
@@ -39,8 +41,8 @@ const Languages = ({ languages }) => {
 
   return (
     <Container>
-      {languages?.map(({ name, index }) => (
-        <h2 key={index}>{byLanguage(name)}</h2>
+      {languages?.map(({ name, code }) => (
+        <h2 key={code}>{byLanguage(name)}</h2>
       ))}
     </Container>
   );
