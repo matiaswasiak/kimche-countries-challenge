@@ -1,29 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-
-const Countries = ({ countries }) => {
-  return (
-    <Container>
-      {countries?.map((countries) => (
-        <Card key={countries.code}>
-          <Title>
-            <div>
-              <p>{countries.name}</p>
-            </div>
-          </Title>
-          <Info>
-            <p>{countries.phone}</p>
-            <p>{countries.currency}</p>
-            <p>{countries.capital}</p>
-          </Info>
-          <Code>
-            <p>{countries.code}</p>
-          </Code>
-        </Card>
-      ))}
-    </Container>
-  );
-};
 
 export const Container = styled.div`
   display: grid;
@@ -37,7 +12,7 @@ export const Card = styled.div`
   width: 320px;
   padding: 20px;
   height: 450px;
-  font-size: 10px;
+  font-size: 0.625rem;
   background: #d9d9d9;
 `;
 
@@ -46,10 +21,10 @@ export const Title = styled.div`
   overflow: hidden;
 
   div {
+    position: relative;
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
-    position: relative;
 
     p {
       position: absolute;
@@ -57,9 +32,8 @@ export const Title = styled.div`
       top: 135px;
       height: 140px;
       width: 410px;
-      font-weight: 500;
-      font-size: 40px;
-      line-height: 65px;
+      font-size: 2.5rem;
+      line-height: 4.05rem;
       transform: rotate(-90deg);
     }
   }
@@ -75,8 +49,8 @@ export const Info = styled.div`
 
   p {
     font-weight: 300;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
     text-align: end;
     word-wrap: break-word;
   }
@@ -84,17 +58,15 @@ export const Info = styled.div`
 
 export const Code = styled.div`
   position: absolute;
-  right: 0%;
+  right: 0;
 
   p {
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 24px;
-    transform: rotate(-90deg);
     margin-top: 4px;
     margin-right: -30px;
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    transform: rotate(-90deg);
     text-align: end;
   }
 `;
-
-export default Countries;

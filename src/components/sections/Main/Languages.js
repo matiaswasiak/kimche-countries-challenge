@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
 import React, { useContext } from "react";
-import { searchCountriesContext } from "../../context/searchCountriesContext";
-import { GET_COUNTRIES } from "../../graphql/queries";
-import Countries from "../organisims/Countries";
-import styled from "styled-components";
+import { searchCountriesContext } from "../../../context/searchCountriesContext";
+import { GET_COUNTRIES } from "../../../graphql/queries";
+import Countries from "../../organisims/Countries/Countries";
+import { Container } from "./MainStyles";
 
 const Languages = ({ languages }) => {
   // GET LANGUAGES
@@ -42,16 +42,5 @@ const Languages = ({ languages }) => {
     </Container>
   );
 };
-
-export const Container = styled.section`
-  h2 {
-    margin-bottom: 20px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 45px;
-    line-height: 55px;
-    text-transform: uppercase;
-  }
-`;
 
 export default Languages;

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { searchCountriesContext } from "../../context/searchCountriesContext";
-import styled from "styled-components";
+import { searchCountriesContext } from "../../../context/searchCountriesContext";
+import { Container, Form } from "./SearchStyles";
 
 const Search = () => {
   const handleSubmit = (e) => {
@@ -28,30 +28,5 @@ const Search = () => {
     </Container>
   );
 };
-
-export const Container = styled.div`
-  p {
-    padding-bottom: 10px;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 29px;
-    color: #000000;
-  }
-`;
-
-export const Form = styled.form`
-  width: 100%;
-
-  input {
-    width: 100%;
-    height: 50px;
-    padding: 0 30px;
-    margin-bottom: 40px;
-    background: #f8f8f8;
-    border: none;
-    outline: none;
-  }
-`;
 
 export default Search;

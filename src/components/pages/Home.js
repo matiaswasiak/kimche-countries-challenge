@@ -1,12 +1,12 @@
 import { useQuery } from "@apollo/client";
 import React, { useState } from "react";
-import { GET_CONTINENTS, GET_LANGUAGES } from "../../graphql/queries";
-import Filter from "../organisims/Filter";
-import Continents from "../sections/Continents";
-import Languages from "../sections/Languages";
-import Search from "../organisims/Search";
-import Header from "../sections/Header";
+import Continents from "../sections/Main/Continents";
+import Languages from "../sections/Main/Languages";
+import Header from "../sections/Header/Header";
 import styled from "styled-components";
+import Search from "../organisims/Search/Search";
+import Filter from "../organisims/Filter/Filter";
+import { GET_CONTINENTS, GET_LANGUAGES } from "../../graphql/queries";
 
 const Home = () => {
   const [filter, setFilter] = useState("continent");
@@ -29,13 +29,13 @@ const Home = () => {
       <Filter setFilter={setFilter} filter={filter} />
 
       {/* Content Section */}
-      <Content>
+      <main>
         {filter === "continent" ? (
           <Continents continents={dataContinents?.continents} />
         ) : (
           <Languages languages={dataLanguages?.languages} />
         )}
-      </Content>
+      </main>
     </Container>
   );
 };
@@ -44,7 +44,5 @@ export const Container = styled.div`
   max-width: 1440px;
   margin: 0 auto;
 `;
-
-export const Content = styled.main``;
 
 export default Home;
