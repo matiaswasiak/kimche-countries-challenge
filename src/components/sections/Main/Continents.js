@@ -23,7 +23,7 @@ const Continents = ({ continents }) => {
     // In case we have search information in our context, we again filter the countries received above with those of the search
     if (searchCountry !== "") {
       countriesByContinent = countriesByContinent?.filter(({ name }) =>
-        name.toLowerCase().includes(searchCountry.toLowerCase())
+        name.toLowerCase().includes(searchCountry.toLowerCase().trimEnd())
       );
     }
 

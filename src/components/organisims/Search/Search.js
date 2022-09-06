@@ -9,7 +9,7 @@ const Search = () => {
 
   const handleChange = (e) => {
     e.preventDefault();
-    setCountry(e.target.value);
+    setCountry(e.target.value.replace(/\s\s+/g, " ").trimStart());
   };
 
   const { searchCountry, setCountry } = useContext(searchCountriesContext);
